@@ -55,7 +55,21 @@ nav, p, section, article {
   color: #fff; 
 }
 
-.hero article img {
-  float: right;
-  width: 150px;
+.hero article img  {
+float: right;
+width: 125px;
+opacity: 0.99;
+}
+
+.hero article {
+ position: absolute;
+ left: 30px;
+ top: 350px;
+ bottom: 66px;
+ width: 90%;
+ padding: 12px;
+ text-align: center;
+ opacity: 0.85;
+ background-color: var(--accent1-color);
+ color: #fff; 
 }
