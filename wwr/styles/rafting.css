@@ -160,6 +160,16 @@ h1 {
 }
 
 /*Contact Us page*/
+/* Contact page title */
+.page-title {
+    position: static;
+    width: auto;
+    padding: 0;
+    margin: 32px 16px 0;
+    opacity: 1;
+    background: none;
+    color: var(--primary-color);
+}
 /*Company details*/
 .company-informations {
     text-align: center;
