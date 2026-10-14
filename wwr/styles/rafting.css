@@ -1,8 +1,14 @@
 :root {
     --primary-color: #055a05;
     --secondary-color: #f4a261;
-    --accent1-color: #264653;
+    --accent1-color: #5b7985;
     --accent2-color: #e9c46a;
+    --text-color: #222;
+    --page-bg: #f4f7f8;
+    --surface-color: #fff;
+    --border-color: #ccd5d9;
+    --tint-color: #e3eeee;
+    --tint-alt-color: #f0f5f5;
     --heading-font: "Georgia", "Times New Roman", serif;
     --body-font: Arial, Helvetica, sans-serif;
 }
@@ -15,28 +21,40 @@
 
 body {
     font-family: var(--body-font);
-    color: var(--accent1-color);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--page-bg);
 }
 
 header,
 main,
 footer {
-    width: 840px;
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 1rem;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--heading-font);
+    line-height: 1.2;
 }
 
 h1,
 h2 {
-    font-family: var(--heading-font);
     color: var(--primary-color);
 }
 
-nav,
-p,
-section,
-article {
-    margin: 16px;
-    padding: 8px;
+main > h1 {
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    text-align: center;
+    background-color: rgba(38, 70, 83, 0.7);
+    color: #fff;
 }
 
 /* Header */
@@ -81,14 +99,13 @@ header nav a:hover {
     height: auto;
 }
 
-h1 {
+.hero h1 {
     position: absolute;
     top: 20px;
     width: 100%;
     padding: 16px;
     text-align: center;
-    opacity: 0.7;
-    background-color: var(--accent1-color);
+    background-color: rgba(38, 70, 83, 0.7);
     color: #fff;
 }
 
@@ -115,7 +132,7 @@ h1 {
     line-height: 1.4;
 }
 
-/* Sections */
+/* Home sections */
 .history h2,
 .adventures h2 {
     border-bottom: 2px solid var(--accent2-color);
@@ -127,10 +144,6 @@ h1 {
     display: flex;
     align-items: center;
     gap: 20px;
-}
-
-.history-content p {
-    line-height: 1.6;
 }
 
 .history-content img {
@@ -159,18 +172,15 @@ h1 {
     font-weight: bold;
 }
 
-/*Contact Us page*/
-/* Contact page title */
+/* Contact page */
 .page-title {
-    position: static;
     width: auto;
     padding: 0;
     margin: 32px 16px 0;
-    opacity: 1;
     background: none;
     color: var(--primary-color);
 }
-/*Company details*/
+
 .company-informations {
     text-align: center;
     margin: 40px 0;
@@ -185,8 +195,6 @@ h1 {
     margin: -8px;
 }
 
-/*Map and form to contact us*/
-/* Map */
 .contact-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -200,7 +208,6 @@ h1 {
     border: none;
 }
 
-/* Form */
 .contact-form {
     max-height: 300px;
     overflow-y: auto;
@@ -217,16 +224,13 @@ h1 {
 .contact-form textarea {
     width: 100%;
     padding: 8px;
-    box-sizing: border-box;
 }
 
-/* Button */
 .contact-form button {
     padding: 10px;
     margin-top: 10px;
 }
 
-/* Employees section */
 .employees h2 {
     text-align: center;
     color: var(--accent1-color);
@@ -266,4 +270,424 @@ footer {
     width: 32px;
     height: 32px;
     margin-left: 8px;
+}
+
+/* Trips page */
+main.trips-page {
+    padding: 2rem;
+}
+
+.trip-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.trip-list > h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.trip-list > p {
+    grid-column: 1 / -1;
+}
+
+.trip-card {
+    background-color: var(--surface-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 12%);
+    display: flex;
+    flex-direction: column;
+}
+
+.trip-card img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.trip-card h3 {
+    color: var(--primary-color);
+    margin: 1rem 1rem 0.5rem;
+}
+
+.trip-card p {
+    margin: 0 1rem 1.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0 3rem;
+    background-color: var(--surface-color);
+}
+
+caption {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent1-color);
+    padding: 1rem;
+}
+
+th,
+td {
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    text-align: left;
+}
+
+thead {
+    background-color: var(--accent1-color);
+    color: #fff;
+}
+
+tbody th {
+    background-color: var(--tint-color);
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--tint-alt-color);
+}
+
+.trip-contact {
+    text-align: center;
+    background-color: var(--accent1-color);
+    color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.trip-contact h2 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.trip-contact a {
+    display: inline-block;
+    background-color: var(--accent2-color);
+    color: #424286;
+    padding: 0.75rem 1.5rem;
+    margin-top: 0.75rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.trip-contact a:hover,
+.trip-contact a:focus {
+    background-color: #fff;
+    text-decoration: underline;
+}
+
+/* Tablet */
+@media screen and (max-width: 900px) {
+    main.trips-page {
+        padding: 1.5rem;
+    }
+
+    .trip-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    th,
+    td {
+        padding: 0.65rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    header nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .map iframe {
+        height: 300px;
+    }
+
+    .contact-form {
+        max-height: none;
+    }
+
+    .history-content,
+    .adventures-content,
+    .employee-images {
+        flex-direction: column;
+    }
+
+    .history-content img {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .hero article {
+        position: static;
+        width: 100%;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+    main.trips-page {
+        padding: 1rem;
+    }
+
+    main > h1 {
+        font-size: 2rem;
+    }
+
+    .trip-list {
+        grid-template-columns: 1fr;
+    }
+
+    .trip-card img {
+        height: 200px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: normal;
+    }
+
+    th,
+    td {
+        min-width: 100px;
+        padding: 0.5rem;
+    }
+
+    .trip-contact {
+        padding: 1.5rem 1rem;
+    }
+}
+
+/* HOME PAGE */
+
+/* Home hero */
+.home-hero {
+    position: relative;
+    margin: 0 0 2rem;
+    padding: 0;
+}
+
+.home-hero > img {
+    display: block;
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+
+.home-hero > h1 {
+    position: absolute;
+    top: 1.5rem;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+    text-align: center;
+    background-color: rgba(38, 70, 83, 0.85);
+    color: #fff;
+    opacity: 1;
+    z-index: 1;
+}
+
+.home-hero .hero-content {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(90%, 650px);
+    margin: 0;
+    padding: 1.5rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.92);
+    border-radius: 8px;
+}
+
+/* Keep your existing CTA styles */
+.home-hero .hero-content p {
+    margin: 0 0 1rem;
+    padding: 0;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.8rem 1.4rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.cta-button:hover,
+.cta-button:focus-visible {
+    background-color: var(--accent1-color);
+    text-decoration: underline;
+}
+
+/* Home content grid */
+.home-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    margin: 2rem 0 3rem;
+    padding: 0;
+}
+
+.home-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: start;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.home-content img {
+    display: block;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.home-text {
+    padding: 0.5rem;
+}
+
+.home-text h2 {
+    margin-bottom: 0.75rem;
+    color: var(--primary-color);
+}
+
+.home-text p {
+    margin: 0 0 1rem;
+    padding: 0;
+}
+
+.home-text a {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Newsletter */
+.newsletter {
+    margin: 2rem 0;
+    padding: 2rem;
+    background-color: var(--accent2-color);
+    border-radius: 8px;
+}
+
+.newsletter h2,
+.newsletter > p {
+    text-align: center;
+}
+
+.newsletter > p {
+    margin: 0.75rem 0 1.5rem;
+    padding: 0;
+}
+
+.newsletter form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-field input {
+    width: 100%;
+    min-height: 42px;
+    padding: 0.6rem;
+    border: 1px solid #555;
+    border-radius: 4px;
+    font: inherit;
+}
+
+.newsletter button {
+    grid-column: 1 / -1;
+    justify-self: center;
+    padding: 0.75rem 2rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.newsletter button:hover,
+.newsletter button:focus-visible {
+    background-color: var(--accent1-color);
+}
+
+/* Responsive Home page */
+@media screen and (max-width: 700px) {
+    .home-hero > img {
+        height: 400px;
+    }
+
+    .home-hero > h1 {
+        top: 1rem;
+        font-size: 1.7rem;
+    }
+
+    .hero-content {
+        bottom: 1rem;
+        padding: 1rem;
+    }
+
+    .home-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-content img {
+        height: 230px;
+    }
+
+    .newsletter {
+        padding: 1.25rem;
+    }
+
+    .newsletter form {
+        grid-template-columns: 1fr;
+    }
+
+    .newsletter button {
+        grid-column: auto;
+        width: 100%;
+    }
 }
