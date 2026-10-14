@@ -1,7 +1,7 @@
 :root {
     --primary-color: #055a05;
     --secondary-color: #f4a261;
-    --accent1-color: #5b7985;
+    --accent1-color: #4a6672;
     --accent2-color: #e9c46a;
     --text-color: #222;
     --page-bg: #f4f7f8;
@@ -53,7 +53,7 @@ main > h1 {
     margin-bottom: 2rem;
     font-size: 2.5rem;
     text-align: center;
-    background-color: rgba(38, 70, 83, 0.7);
+    background-color: rgba(38, 70, 83, 0.85);
     color: #fff;
 }
 
@@ -84,11 +84,12 @@ header nav a {
     text-decoration: none;
 }
 
-header nav a:hover {
+header nav a:hover,
+header nav a:focus {
     background-color: var(--accent2-color);
 }
 
-/* Hero */
+/* About page hero */
 .hero {
     position: relative;
 }
@@ -105,7 +106,7 @@ header nav a:hover {
     width: 100%;
     padding: 16px;
     text-align: center;
-    background-color: rgba(38, 70, 83, 0.7);
+    background-color: rgba(38, 70, 83, 0.85);
     color: #fff;
 }
 
@@ -114,7 +115,8 @@ header nav a:hover {
     bottom: 0;
     right: 0;
     width: 380px;
-    background-color: rgba(255, 255, 255, 0.85);
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.92);
     border-left: 6px solid var(--secondary-color);
 }
 
@@ -132,7 +134,7 @@ header nav a:hover {
     line-height: 1.4;
 }
 
-/* Home sections */
+/* About page sections */
 .history h2,
 .adventures h2 {
     border-bottom: 2px solid var(--accent2-color);
@@ -186,13 +188,8 @@ header nav a:hover {
     margin: 40px 0;
 }
 
-.company-informations h2 {
-    margin-bottom: 20px;
-    color: var(--accent1-color);
-}
-
 .company-informations p {
-    margin: -8px;
+    margin: 0;
 }
 
 .contact-content {
@@ -208,15 +205,23 @@ header nav a:hover {
     border: none;
 }
 
-.contact-form {
-    max-height: 300px;
-    overflow-y: auto;
-}
-
 .contact-form form {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.contact-form fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+}
+
+.contact-form legend {
+    padding: 0 0.25rem;
+    font-weight: bold;
 }
 
 .contact-form input[type="text"],
@@ -298,7 +303,7 @@ main.trips-page {
     background-color: var(--surface-color);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 12%);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
     display: flex;
     flex-direction: column;
 }
@@ -384,112 +389,10 @@ tbody tr:nth-child(even) {
     text-decoration: underline;
 }
 
-/* Tablet */
-@media screen and (max-width: 900px) {
-    main.trips-page {
-        padding: 1.5rem;
-    }
-
-    .trip-list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    table {
-        font-size: 0.9rem;
-    }
-
-    th,
-    td {
-        padding: 0.65rem;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    header nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .contact-content {
-        grid-template-columns: 1fr;
-        gap: 24px;
-    }
-
-    .map iframe {
-        height: 300px;
-    }
-
-    .contact-form {
-        max-height: none;
-    }
-
-    .history-content,
-    .adventures-content,
-    .employee-images {
-        flex-direction: column;
-    }
-
-    .history-content img {
-        width: 100%;
-        max-width: 250px;
-    }
-
-    .hero article {
-        position: static;
-        width: 100%;
-    }
-
-    footer {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-}
-
-/* Mobile */
-@media screen and (max-width: 600px) {
-    main.trips-page {
-        padding: 1rem;
-    }
-
-    main > h1 {
-        font-size: 2rem;
-    }
-
-    .trip-list {
-        grid-template-columns: 1fr;
-    }
-
-    .trip-card img {
-        height: 200px;
-    }
-
-    table {
-        display: block;
-        overflow-x: auto;
-        white-space: normal;
-    }
-
-    th,
-    td {
-        min-width: 100px;
-        padding: 0.5rem;
-    }
-
-    .trip-contact {
-        padding: 1.5rem 1rem;
-    }
-}
-
-/* HOME PAGE */
-
-/* Home hero */
+/* Home page: hero (sits outside <main>, so it spans the full page width) */
 .home-hero {
     position: relative;
+    width: 100%;
     margin: 0 0 2rem;
     padding: 0;
 }
@@ -511,24 +414,17 @@ tbody tr:nth-child(even) {
     text-align: center;
     background-color: rgba(38, 70, 83, 0.85);
     color: #fff;
-    opacity: 1;
     z-index: 1;
 }
 
 .home-hero .hero-content {
-    position: absolute;
-    bottom: 1.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: min(90%, 650px);
+    width: 100%;
     margin: 0;
-    padding: 1.5rem;
+    padding: 1rem;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.92);
-    border-radius: 8px;
+    background-color: var(--surface-color);
 }
 
-/* Keep your existing CTA styles */
 .home-hero .hero-content p {
     margin: 0 0 1rem;
     padding: 0;
@@ -545,12 +441,12 @@ tbody tr:nth-child(even) {
 }
 
 .cta-button:hover,
-.cta-button:focus-visible {
+.cta-button:focus {
     background-color: var(--accent1-color);
     text-decoration: underline;
 }
 
-/* Home content grid */
+/* Home page: content grid */
 .home-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -595,7 +491,7 @@ tbody tr:nth-child(even) {
     font-weight: bold;
 }
 
-/* Newsletter */
+/* Home page: newsletter */
 .newsletter {
     margin: 2rem 0;
     padding: 2rem;
@@ -650,11 +546,74 @@ tbody tr:nth-child(even) {
 }
 
 .newsletter button:hover,
-.newsletter button:focus-visible {
+.newsletter button:focus {
     background-color: var(--accent1-color);
 }
 
-/* Responsive Home page */
+/* Responsive: tablet */
+@media screen and (max-width: 900px) {
+    main.trips-page {
+        padding: 1.5rem;
+    }
+
+    .trip-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    th,
+    td {
+        padding: 0.65rem;
+    }
+}
+
+/* Responsive: small tablet / large phone */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    header nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .map iframe {
+        height: 300px;
+    }
+
+    .history-content,
+    .adventures-content,
+    .employee-images {
+        flex-direction: column;
+    }
+
+    .history-content img {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .hero article {
+        position: static;
+        width: 100%;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Responsive: home page */
 @media screen and (max-width: 700px) {
     .home-hero > img {
         height: 400px;
@@ -663,11 +622,6 @@ tbody tr:nth-child(even) {
     .home-hero > h1 {
         top: 1rem;
         font-size: 1.7rem;
-    }
-
-    .hero-content {
-        bottom: 1rem;
-        padding: 1rem;
     }
 
     .home-grid {
@@ -689,5 +643,40 @@ tbody tr:nth-child(even) {
     .newsletter button {
         grid-column: auto;
         width: 100%;
+    }
+}
+
+/* Responsive: mobile */
+@media screen and (max-width: 600px) {
+    main.trips-page {
+        padding: 1rem;
+    }
+
+    main > h1 {
+        font-size: 2rem;
+    }
+
+    .trip-list {
+        grid-template-columns: 1fr;
+    }
+
+    .trip-card img {
+        height: 200px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: normal;
+    }
+
+    th,
+    td {
+        min-width: 100px;
+        padding: 0.5rem;
+    }
+
+    .trip-contact {
+        padding: 1.5rem 1rem;
     }
 }

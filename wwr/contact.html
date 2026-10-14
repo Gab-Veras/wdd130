@@ -23,59 +23,65 @@
             </ul>
         </nav>
     </header>
+
     <main>
-        <h1 class="page-title">Wild Water Rafting</h1>
+        <h1 class="page-title">Contact Us</h1>
         <div class="company-informations">
+            <p>Wild Water Rafting</p>
             <p>27, Elisa Bramante Francisco</p>
             <p>Sorocaba, São Paulo</p>
             <p>(15) 4002-8922</p>
-            <p>helpdesk@wildwhater.com</p>
+            <p>helpdesk@wildwater.com</p>
         </div>
 
         <div class="contact-content">
             <div class="map">
-                <iframe
+                <iframe title="Map showing the Wild Water Rafting location in Sorocaba"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3661.207650390799!2d-47.419004225255954!3d-23.416864956298408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf5f1964786f29%3A0x580ab0956893da7!2sRua%20Elisa%20Bramante%20Francisco%2C%2027%20-%20%C3%89den%2C%20Sorocaba%20-%20SP%2C%2018103-080!5e0!3m2!1spt-BR!2sbr!4v1791354635662!5m2!1spt-BR!2sbr"
-                  width="400" height="300" allowfullscreen="" loading="lazy"
+                  width="400" height="300" allowfullscreen loading="lazy"
                   referrerpolicy="strict-origin-when-cross-origin"></iframe>
             </div>
+
             <div class="contact-form">
-                <!-- User informations -->
-                <form>
+                <form action="#" method="get">
+                    <!-- User information -->
                     <label for="name">Name:</label>
-                    <input type="text" id="name" name="name">
+                    <input type="text" id="name" name="name" autocomplete="name">
 
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email">
+                    <input type="email" id="email" name="email" autocomplete="email">
 
-                    <!-- Purpose of the message in radios -->
-                    <label>
-                        <input type="radio" id="purpose-general" name="purpose" value="general">
-                        General Inquiry
-                    </label>
-                    <label>
-                        <input type="radio" id="purpose-reservation" name="purpose"
-                          value="reservation">
-                        Reservation Question
-                    </label>
+                    <!-- Purpose of the message -->
+                    <fieldset>
+                        <legend>Purpose of your message:</legend>
+                        <label for="purpose-general">
+                            <input type="radio" id="purpose-general" name="purpose" value="general">
+                            General Inquiry
+                        </label>
+                        <label for="purpose-reservation">
+                            <input type="radio" id="purpose-reservation" name="purpose"
+                              value="reservation">
+                            Reservation Question
+                        </label>
+                        <label for="purpose-suggestion">
+                            <input type="radio" id="purpose-suggestion" name="purpose"
+                              value="suggestion">
+                            Website Suggestion
+                        </label>
+                    </fieldset>
 
-                    <label>
-                        <input type="radio" id="purpose-suggestion" name="purpose"
-                          value="suggestion">
-                        Website Suggestion
-                    </label>
-                    <!-- Message input field -->
+                    <!-- Message -->
                     <label for="message">Message:</label>
                     <textarea id="message" name="message" rows="5"></textarea>
-                    <!-- Newsletter chack -->
-                    <label>
+
+                    <!-- Newsletter checkbox -->
+                    <label for="subscribe">
                         <input type="checkbox" id="subscribe" name="subscribe">
                         Please subscribe me to the monthly newsletter
                     </label>
-                    <!-- Final button -->
+
                     <button type="submit">Get in Touch</button>
                 </form>
-
             </div>
         </div>
 
@@ -83,22 +89,20 @@
             <h2>We Are Here to Serve You</h2>
 
             <div class="employee-images">
-
                 <figure>
-                    <img src="images/employiee-one.jpg" alt="Employee 1">
-                    <figcaption>Jhon - River Guide</figcaption>
+                    <img src="images/employee-1.jpg" alt="John, river guide">
+                    <figcaption>John - River Guide</figcaption>
                 </figure>
 
                 <figure>
-                    <img src="images/employiee-two.jpg" alt="Employee 2">
+                    <img src="images/employee-2.jpg" alt="Sandy, safety coordinator">
                     <figcaption>Sandy - Safety Coordinator</figcaption>
                 </figure>
 
                 <figure>
-                    <img src="images/employiee-three.jpg" alt="Employee 3">
+                    <img src="images/employee-3.jpg" alt="Billy, trip coordinator">
                     <figcaption>Billy - Trip Coordinator</figcaption>
                 </figure>
-
             </div>
         </section>
     </main>
